@@ -4,6 +4,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//require('./modules/01_first_class_function');
+//require('./modules/02_function_expression');
+//require('./modules/03_anonymous_function');
+
+// require function returns results of module.exports
+// functions are first class so I can set them to a variable and then invoke the function using the variable nome
+//var greet = require('./modules/04_build_a_module');
+//greet();
+
+//require('./modules/05_object_literals');
+require('./modules/06_function_constructor');
+
 var routes = require('./routes/index');
 
 var app = express();
