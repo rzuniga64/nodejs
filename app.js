@@ -14,7 +14,9 @@ var bodyParser = require('body-parser');
 //greet();
 
 //require('./modules/05_object_literals');
-require('./modules/06_function_constructor');
+//require('./modules/06_function_constructor');
+require('./modules/07_pass_by_value');
+require('./modules/08_pass_by_reference');
 
 var routes = require('./routes/index');
 
