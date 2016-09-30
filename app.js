@@ -18,16 +18,12 @@ var bodyParser = require('body-parser');
 //require('./modules/07_pass_by_value');
 //require('./modules/08_pass_by_reference');
 //require('./modules/09_iife');
-require('./modules/10_module_exports_and_require');
 
-var greetme = require('./modules/10_module_exports_and_require');
-greetme.english();
-greetme.spanish();
+var greetings = require('./modules/10_module_exports_and_require/');
+greetings.english();
+greetings.spanish();
 
-var greetings = require('./modules/10_module_exports_and_require/greetings.json');  // the json file will be converted to a JavaScript object
-console.log(greetings.en);
-console.log (greetings.es);
-
+greetings = require('./modules/10_module_exports_and_require/greetings.json');  // the json file will be converted to a JavaScript object
 
 var routes = require('./routes/index');
 
