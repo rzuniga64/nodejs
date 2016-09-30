@@ -15,8 +15,19 @@ var bodyParser = require('body-parser');
 
 //require('./modules/05_object_literals');
 //require('./modules/06_function_constructor');
-require('./modules/07_pass_by_value');
-require('./modules/08_pass_by_reference');
+//require('./modules/07_pass_by_value');
+//require('./modules/08_pass_by_reference');
+//require('./modules/09_iife');
+require('./modules/10_module_exports_and_require');
+
+var greetme = require('./modules/10_module_exports_and_require');
+greetme.english();
+greetme.spanish();
+
+var greetings = require('./modules/10_module_exports_and_require/greetings.json');  // the json file will be converted to a JavaScript object
+console.log(greetings.en);
+console.log (greetings.es);
+
 
 var routes = require('./routes/index');
 
