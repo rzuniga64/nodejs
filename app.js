@@ -19,14 +19,37 @@ var bodyParser = require('body-parser');
 //require('./modules/08_pass_by_reference');
 //require('./modules/09_iife');
 
-var greetings = require('./modules/10_module_exports_and_require/');
-greetings.english();
-greetings.spanish();
+//var greetings = require('./modules/10_module_exports_and_require/');
+//greetings.english();
+//greetings.spanish();
 
-greetings = require('./modules/10_module_exports_and_require/greetings.json');  // the json file will be converted to a JavaScript object
+/**
+ * Module Patterns
+ */
+//var greet1 = require('./modules/11_module_pattern1');
+//greet1();
+
+// Pattern 2: I want a property on the module.exports object
+//var greet2 = require('./modules/11_module_pattern2').greet;
+//greet2();
+
+// Pattern 3: replace exports with my own object using a regular function constructor
+/*var greet3 = require('./modules/11_module_pattern3');
+greet3.greet();
+greet3.greeting = 'Changed Module Pattern 3';
+
+var greet3b = require('./modules/11_module_pattern3');
+greet3b.greet();*/
+
+// Pattern 4: replace module.exports object with the function constructor itself.
+/*var Greet4 = require('./modules/11_module_pattern4');
+var grtr = new Greet4(); // Greet4() is a function constructor
+grtr.greet();*/
+
+var greet5 = require('./modules/11_module_pattern5').greet;
+greet5();
 
 var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
