@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 require('./modules/modules');
+require('./event_emitter/event_emitter');
 
 var routes = require('./routes/index');
 var app = express();
