@@ -62,4 +62,6 @@ emtr.emit('greet');*/
 
 //require('./14_node_event_emitter');             //NodeJS Event Emitter
 //require('./15_object_create_and_prototypes');   ///object.create and prototypes
-require('./16_inheriting_from_node_event_emitter');
+//require('./16_inheriting_from_node_event_emitter');
+//require('./17_es6_template_literals');
+require('./18_es6_call_and_apply');
