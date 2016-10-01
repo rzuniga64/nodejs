@@ -18,4 +18,6 @@
 //require('./16_inheriting_from_node_event_emitter');
 //require('./17_es6_template_literals');
 //require('./18_es6_call_and_apply');
-require('./../event_emitter/19_inheriting_from_node_event_emitter2');
+//require('./19_inheriting_from_node_event_emitter2');
+//require('./20_ES6_Classes');
+require('./21_inheriting_from_node_event_emitter3');
