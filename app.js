@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 require('./modules/modules');
 require('./event_emitter/event_emitter');
+require('./steams_and_buffers/streams_and_buffers');
 
 var routes = require('./routes/index');
 var app = express();
