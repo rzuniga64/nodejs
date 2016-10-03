@@ -5,15 +5,20 @@
  *
  *  A readable stream must be sent to a writeable stream.
  */
-var fs3 = require('fs');
+var fs = require('fs');
 var zlib = require('zlib');
 
-// highWaterMark helps to minimize the amount of memory being used on the server.
-var readable2 = fs3.createReadStream(__dirname + '/loremipsum.txt');
-//var writeable2 = fs.createWriteStream(__dirname + '/greetcopy.txt');
-var compressed = fs.createWriteStream(__dirname + '/greet.txt.gz');
+var readable = fs.createReadStream(__dirname + '/loremipsum.txt');
 
-var gzip = zlib.createGzip(); // creates a transform (rw) stream
+var writeable = fs.createWriteStream(__dirname + '/loremipsum_copy.txt');
 
-//readable2.pipe(writeable2);  // pipe sets up event listener to listen for chuck of data
-readable2.pipe(gzip).pipe(compressed);
+
+// pipe sets up event listener to listen for chuck of data. pipe(writeable) returns writeable.
+readable.pipe(writeable);
+
+var compressed = fs.createWriteStream(__dirname + '/loremipsum.txt.gz');  //pipe compressed data to a file
+
+var gzip = zlib.createGzip(); // creates a transform (rw) stream that is compressed
+
+//read from the text file, compress it and write the compressed data to a file
+readable.pipe(gzip).pipe(compressed);
