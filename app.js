@@ -8,9 +8,15 @@ require('./modules/modules');
 require('./event_emitter/event_emitter');
 require('./steams_and_buffers/streams_and_buffers');
 require('./http/http');
+require('./express/express');
 
 var routes = require('./routes/index');
 var app = express();
+
+app.get('/test', function(req, res) {
+    res.send("<html><head></head><body> <h1>Hello World!</h1></body> </html>"
+    );
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
