@@ -1,13 +1,4 @@
 
-/**
- * 9.75 Static Files and Middleware
- *
- * This static file will be downloaded when it is requested by an HTTP request by using middleware.
- * Every time we see '/assets/file' then what I will actually do is go find '__dirname + /public/' and go look for that
- * file and stream the response back.
- */
-app.use('/assets', express.static(__dirname +'/public'));
-//app.use(express.static(path.join(__dirname, 'public')));
 
 // run some custom middleware
 app.use('/', function(req, res, next) {

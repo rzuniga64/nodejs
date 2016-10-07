@@ -1,2 +1,27 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<form method="post" action="/name">
+    <fieldset>
+        <legend>Person</legend>
+        <div class="form-group">
+            <label for="firstname">First Name </label>
+            <input type="text" class="form-control" id="firstname" name="firstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </fieldset>
+</form>
+
+<script>
+    $.ajax({
+        type: "POST",
+        url: "/namejson",
+        data: JSON.stringify({firstname: 'John', lastname: 'Doe' }),
+        dataType: 'json',
+        contentType: 'application/json'
+    });
+</script>
