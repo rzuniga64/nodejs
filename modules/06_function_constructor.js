@@ -7,8 +7,12 @@
  *  These prototypes that are not directly connected to ‘obj’ are called the prototype chain. I can access any methods
  *  of any object down the line without having to specify which one it is. This is prototypal inheritance.
  *
- * Any time you see the prototype property we adding some methods and properties to be available to all objects created
- * from this particular function constructor.
+ *  Any time you see the prototype property we adding some methods and properties to be available to all objects created
+ *  from this particular function constructor.
+ *
+ *  I can say new and call a function and that will execute the function and take the this keyword and make it a new
+ *  empty object.  We can use the this keyword to construct our object adding properties and methods to it.  The function
+ *  constructor will automatically return that new object from the function call.
  */
 
 function Person(firstname, lastname) {  // function constructor
