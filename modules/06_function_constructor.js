@@ -7,8 +7,8 @@
  *  These prototypes that are not directly connected to ‘obj’ are called the prototype chain. I can access any methods
  *  of any object down the line without having to specify which one it is. This is prototypal inheritance.
  *
- *  Any time you see the prototype property we adding some methods and properties to be available to all objects created
- *  from this particular function constructor.
+ *  Any time you see the prototype property we are adding some methods and properties to be available to all objects
+ *  created from this particular function constructor.
  *
  *  FUNCTION CONSTRUCTORS
  *  I can say new and call a function and that will execute the function and take the this keyword and make it a new
@@ -21,18 +21,16 @@ function Person(firstname, lastname) {  // function constructor
     this.lastname = lastname;
 }
 
-// The prototype is not the prototype of person but of any object created from person.
-// I can add properties and methods to the prototype object
+// Functions are special kinds of objects that can have properties and methods on functions as well.
+// There is a built-in function called prototype. I can add properties and methods to the prototype object.
 Person.prototype.greet = function() {
     console.log('Hello, ' + this.firstname + ' ' + this.lastname);
 };
 
-var john = new Person('John', 'Doe');
-console.log(john);
-console.log(john.firstname);
-
-// What happens when you use function constructors is that any object created from a function constructor, its
-// prototype will point to the prototype property of the function you used to construct the object.
+// What happens when you use function constructors is that any object (john) created from a function constructor(Person),
+// its prototype (john.prototype) will point to the prototype property of the function you used to construct the object.
+// It's a little confusing because it's name is prototype but it's not the prototype of Person, it is the prototype of any
+// object created from Person.
 var john = new Person('John', 'Doe');
 john.greet();
 
