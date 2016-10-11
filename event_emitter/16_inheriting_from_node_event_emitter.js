@@ -8,21 +8,23 @@
 var EventEmitter = require('events');
 var util = require('util');
 
-function Greetr() {
-    /**
-     *  EventEmitter when invoked with 'new' keyword the 'this' variable points to an empty object and adds on properties/methods.
-     * I am overriding the this object so call the function constructor and pass the new object that has already been created.
-     *
-     *  Then inside the EventEmitter constructor I will have a bunch of properties and methods added, if there are any,
-     *  to it. Because the this object is passed by reference I can add my own properties and methods to that new object.
-     *  This is what is called in other languages the 'super constructor' or the constructor I am inheriting from.
-     */
-    EventEmitter.call(this);
+/**
+ *  EventEmitter when invoked with 'new' keyword the 'this' variable points to an empty object and adds on properties/methods.
+ * I am overriding the this object so call the function constructor and pass the new object that has already been created.
+ *
+ *  Then inside the EventEmitter constructor I will have a bunch of properties and methods added, if there are any,
+ *  to it. Because the this object is passed by reference I can add my own properties and methods to that new object.
+ *  This is what is called in other languages the 'super constructor' or the constructor I am inheriting from.
+ */
 
+function Greetr() {
+
+    EventEmitter.call(this);
     this.greeting = '\nInheritance!';
 }
 
-util.inherits(Greetr, EventEmitter);        // Greetr inherits from EventEmitter so now is an event emitter.
+// Any objects created from Greetr has access to properties/methods on prototype property of event emitter.
+util.inherits(Greetr, EventEmitter);
 
 Greetr.prototype.greet = function(data) {   // add your own method after the fact that logs & emits
     console.log(this.greeting + ': ' + data);
@@ -35,4 +37,4 @@ greeter1.on('greet', function(data) {
     console.log('Someone greeted: ' + data);
 });
 
-greeter1.greet('Raul');
+greeter1.greet('from Event Emitter');
