@@ -32,7 +32,7 @@ Person.prototype.greet = function() {
 // It's a little confusing because it's name is prototype but it's not the prototype of Person, it is the prototype of any
 // object created from Person.
 var john = new Person('John', 'Doe');
-john.greet();
+john.greet(); // JavaScript engine will search down the prototype chain because there is not greet method on john itself.
 
 // The Jane object's prototype is the same prototype object
 var jane = new Person('Jane', 'Doe');
@@ -41,3 +41,4 @@ jane.greet();
 // prototype object that has the greet function on it
 console.log(john.__proto__);
 console.log(jane.__proto__);
+console.log(john.__proto__ === jane.__proto__);
